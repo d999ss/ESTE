@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   nitro: {
-    preset: 'static'
+    preset: 'github_pages'
+  },
+  app: {
+    baseURL: '/ESTE/'
   },
   runtimeConfig: {
     public: {
