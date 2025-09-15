@@ -25,7 +25,12 @@ jobs:
           cache: 'npm'
       - run: npm ci
       # Build with correct base for repo pages and Nuxt's GitHub Pages preset
-      - run: NUXT_APP_BASE_URL=/ESTE/ npx nuxt build --preset github_pages
+      - run: npm run build
+        env:
+          NUXT_APP_BASE_URL: /ESTE/
+          NUXT_PUBLIC_SANITY_PROJECT_ID: 928u0duj
+          NUXT_PUBLIC_SANITY_DATASET: production
+          NUXT_PUBLIC_SANITY_API_VERSION: 2023-05-03
       # Prevent Jekyll from blocking the _nuxt folder
       - run: touch .output/public/.nojekyll
       - uses: actions/upload-pages-artifact@v3
