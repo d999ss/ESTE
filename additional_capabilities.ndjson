@@ -1,9 +1,0 @@
-{"_type": "capability", "_id": "capability-design-strategy", "title": "Design Strategy", "code": "DS", "slug": {"current": "design-strategy"}}
-{"_type": "capability", "_id": "capability-marketing-design", "title": "Marketing Design", "code": "MK.D", "slug": {"current": "marketing-design"}}
-{"_type": "capability", "_id": "capability-brand-audit", "title": "Brand Audit", "code": "BA", "slug": {"current": "brand-audit"}}
-{"_type": "capability", "_id": "capability-brand-guidelines-and-creative-toolkits", "title": "Brand Guidelines & Creative Toolkits", "code": "G", "slug": {"current": "brand-guidelines-and-creative-toolkits"}}
-{"_type": "capability", "_id": "capability-curation", "title": "Curation", "code": "C", "slug": {"current": "curation"}}
-{"_type": "capability", "_id": "capability-brand-implementation", "title": "Brand Implementation", "code": "BI", "slug": {"current": "brand-implementation"}}
-{"_type": "capability", "_id": "capability-digital-product-design", "title": "Digital Product Design", "code": "PD", "slug": {"current": "digital-product-design"}}
-{"_type": "capability", "_id": "capability-ux-ui", "title": "UX / UI", "code": "UXUI", "slug": {"current": "ux-ui"}}
-{"_type": "location", "_id": "location-los-angeles-ca", "title": "LOS ANGELES, CA", "slug": {"current": "los-angeles-ca"}}
