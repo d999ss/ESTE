@@ -1,27 +1,25 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <div v-if="siteSettings">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>{{ siteSettings.siteTitle }}</h3>
-            <p>Brand development & design practice</p>
+      <div v-if="siteSettings" class="footer-content">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <h3 class="footer-title font-monument">{{ siteSettings.siteTitle }}</h3>
+            <p class="footer-tagline">New York + Barcelona</p>
           </div>
 
-          <div class="footer-section">
-            <h4>Contact</h4>
-            <p v-if="siteSettings.contact?.email">
+          <div class="footer-contact">
+            <p v-if="siteSettings.contact?.email" class="contact-email">
               <a :href="`mailto:${siteSettings.contact.email}`">
                 {{ siteSettings.contact.email }}
               </a>
             </p>
           </div>
 
-          <div class="footer-section">
-            <h4>Follow</h4>
+          <div class="footer-social">
             <ul v-if="siteSettings.socialLinks" class="social-links">
               <li v-for="link in siteSettings.socialLinks" :key="link.title">
-                <a :href="link.url" target="_blank" rel="noopener">
+                <a :href="link.url" target="_blank" rel="noopener" class="social-link">
                   {{ link.title }}
                 </a>
               </li>
@@ -30,7 +28,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; {{ new Date().getFullYear() }} {{ siteSettings.siteTitle }}. All rights reserved.</p>
+          <p class="copyright">© {{ new Date().getFullYear() }}</p>
         </div>
       </div>
     </div>
@@ -44,60 +42,125 @@ const { data: siteSettings } = await useAsyncData('siteSettings', getSiteSetting
 
 <style scoped>
 .footer {
-  border-top: 1px solid #eee;
-  padding: 40px 0 20px;
-  margin-top: 80px;
-  color: #666;
-  font-size: 12px;
+  margin-top: var(--space-20);
+  padding: var(--space-20) 0 var(--space-8);
+  border-top: 1px solid var(--color-gray-200);
 }
 
 .footer-content {
+  width: 100%;
+}
+
+.footer-main {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  margin-bottom: 30px;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--grid-gap);
+  margin-bottom: var(--space-12);
 }
 
-.footer-section h3,
-.footer-section h4 {
-  color: #000;
-  margin-bottom: 10px;
-  font-size: 14px;
+.footer-brand {
+  grid-column: span 2;
 }
 
-.footer-section h3 {
-  font-size: 16px;
+.footer-title {
+  font-family: var(--font-monument);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin-bottom: var(--space-1);
+}
+
+.footer-tagline {
+  font-size: var(--text-sm);
+  color: var(--color-gray-600);
+  font-weight: 400;
+}
+
+.footer-contact {
+  grid-column: span 2;
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-email {
+  font-size: var(--text-sm);
+  color: var(--color-black);
+}
+
+.contact-email a {
+  transition: opacity var(--transition);
+}
+
+.contact-email a:hover {
+  opacity: 0.6;
+}
+
+.footer-social {
+  grid-column: span 2;
+  display: flex;
+  align-items: flex-start;
 }
 
 .social-links {
   list-style: none;
   display: flex;
-  gap: 15px;
+  gap: var(--space-6);
 }
 
-.social-links a {
-  transition: opacity 0.2s ease;
+.social-link {
+  font-size: var(--text-sm);
+  color: var(--color-black);
+  transition: opacity var(--transition);
 }
 
-.social-links a:hover {
+.social-link:hover {
   opacity: 0.6;
 }
 
 .footer-bottom {
-  border-top: 1px solid #eee;
-  padding-top: 20px;
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: var(--space-6);
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  color: var(--color-gray-600);
   text-align: center;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .footer-content {
+  .footer-main {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-8);
+  }
+
+  .footer-brand,
+  .footer-contact,
+  .footer-social {
+    grid-column: span 1;
   }
 
   .social-links {
+    gap: var(--space-4);
+  }
+
+  .footer {
+    margin-top: var(--space-16);
+    padding: var(--space-16) 0 var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
     flex-direction: column;
-    gap: 10px;
+    gap: var(--space-3);
+  }
+
+  .footer {
+    margin-top: var(--space-12);
+    padding: var(--space-12) 0 var(--space-4);
   }
 }
 </style>
