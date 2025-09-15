@@ -6,6 +6,7 @@
     <title>EST+6 — Work</title>
     <!-- Cache bust: 2025-09-15-15:41 -->
     <style>
+        /* EST+6 Portfolio Styles - Authentic Design */
         * {
             margin: 0;
             padding: 0;
@@ -13,54 +14,57 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #ffffff;
-            color: #000000;
-            line-height: 1.6;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.4;
+            color: #000;
+            background-color: #fff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
         .container {
-            max-width: 1440px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 20px;
         }
 
         /* Header */
         .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2rem 0;
-            border-bottom: 1px solid #e5e5e5;
-            margin-bottom: 3rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 100;
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
         }
 
         .nav {
             display: flex;
-            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .nav a {
-            color: #000;
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: opacity 0.3s;
+        .logo {
+            font-weight: bold;
+            font-size: 16px;
         }
 
-        .nav a:hover {
-            opacity: 0.6;
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
         }
 
         .location-indicators {
             display: flex;
-            gap: 1rem;
-            font-size: 0.75rem;
+            gap: 15px;
+            font-size: 12px;
         }
 
         .location-indicator {
@@ -71,233 +75,220 @@
             opacity: 1;
         }
 
-        /* Main Title */
-        .page-title {
-            text-align: center;
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 3rem;
+        /* Main content */
+        .main {
+            margin-top: 80px;
+            padding: 40px 0;
         }
 
-        /* Projects Grid */
+        /* Project grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
         }
 
         .project-card {
-            position: relative;
-            background: #f5f5f5;
-            aspect-ratio: 4/3;
+            border: 1px solid #eee;
             overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.2s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .project-card.size-large {
-            grid-column: span 3;
-            grid-row: span 2;
-        }
-
-        .project-card.size-medium {
-            grid-column: span 2;
-        }
-
-        .project-card.size-small {
-            grid-column: span 2;
+            transform: translateY(-2px);
         }
 
         .project-image {
             width: 100%;
-            height: 100%;
+            aspect-ratio: 16/9;
             object-fit: cover;
         }
 
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 1.5rem;
-            color: white;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .project-card:hover .project-overlay {
-            opacity: 1;
+        .project-info {
+            padding: 20px;
         }
 
         .project-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
         .project-client {
-            font-size: 0.875rem;
-            opacity: 0.9;
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 10px;
+            font-size: 11px;
+            color: #999;
         }
 
         /* Footer */
         .footer {
-            border-top: 1px solid #e5e5e5;
-            padding: 3rem 0 2rem;
-            margin-top: 4rem;
+            border-top: 1px solid #eee;
+            padding: 40px 0;
+            margin-top: 80px;
+            color: #666;
+            font-size: 12px;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .footer-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+            font-weight: bold;
         }
 
-        .footer-tagline {
-            font-size: 0.875rem;
-            color: #666;
-        }
-
-        .copyright {
-            text-align: center;
-            font-size: 0.75rem;
-            color: #999;
-            padding-top: 2rem;
-            border-top: 1px solid #e5e5e5;
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
             .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .project-card.size-large,
-            .project-card.size-medium,
-            .project-card.size-small {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-
-            .page-title {
-                font-size: 2rem;
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .footer-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">EST+6</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
             <nav class="nav">
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <div class="logo">EST+6</div>
+                <ul class="nav-links">
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="location-indicators">
+                    <span class="location-indicator">NYC</span>
+                    <span class="location-indicator active">EST</span>
+                    <span class="location-indicator">BCN</span>
+                </div>
             </nav>
-            <div class="location-indicators">
-                <span class="location-indicator">NYC</span>
-                <span class="location-indicator active">EST</span>
-                <span class="location-indicator">BCN</span>
-            </div>
-        </header>
+        </div>
+    </header>
 
-        <!-- Main Content -->
-        <main>
-            <h1 class="page-title">Work</h1>
-
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
             <div class="projects-grid">
                 <!-- Project 1: RCA Records -->
-                <article class="project-card size-large">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/54f95c604e0c7fba60a2c59966e7c89deb3ad669-1200x800.jpg" alt="RCA Records">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">Brand Identity System</h2>
                         <p class="project-client">RCA Records</p>
+                        <div class="project-meta">
+                            <span>2024</span>
+                            <span>Identity</span>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 2: META -->
-                <article class="project-card size-medium">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/9e3c11dc2c09b685e748b088c09cdcdf8e37e8e0-1080x1080.jpg" alt="META">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">AR/VR Experience Design</h2>
                         <p class="project-client">META</p>
+                        <div class="project-meta">
+                            <span>2024</span>
+                            <span>Digital</span>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 3: New Museum -->
-                <article class="project-card size-small">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/fe5ae4f70fb5d88c94c2e0cc13ae7a45c4b2f50b-1920x1080.jpg" alt="New Museum">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">Digital Exhibition Platform</h2>
                         <p class="project-client">New Museum</p>
+                        <div class="project-meta">
+                            <span>2024</span>
+                            <span>Digital</span>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 4: Verizon -->
-                <article class="project-card size-medium">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/2f57e5c4f4cc8a82f962f085e6e47a7e10b8c9a8-1600x900.jpg" alt="Verizon">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">5G Campaign</h2>
                         <p class="project-client">Verizon</p>
+                        <div class="project-meta">
+                            <span>2023</span>
+                            <span>Campaign</span>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 5: Nike -->
-                <article class="project-card size-small">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/7c3f8a0e5f9c8b4d3e2a1b0c9d8e7f6a5b4c3d2e-1920x1080.jpg" alt="Nike">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">Retail Experience</h2>
                         <p class="project-client">Nike</p>
+                        <div class="project-meta">
+                            <span>2023</span>
+                            <span>Experience</span>
+                        </div>
                     </div>
                 </article>
 
                 <!-- Project 6: MoMA -->
-                <article class="project-card size-medium">
+                <article class="project-card">
                     <img class="project-image" src="https://cdn.sanity.io/images/928u0duj/production/a8b9c7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a1b0-1600x1200.jpg" alt="MoMA">
-                    <div class="project-overlay">
+                    <div class="project-info">
                         <h2 class="project-title">Wayfinding System</h2>
                         <p class="project-client">MoMA</p>
+                        <div class="project-meta">
+                            <span>2023</span>
+                            <span>Wayfinding</span>
+                        </div>
                     </div>
                 </article>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <!-- Footer -->
-        <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer-content">
                 <div>
-                    <h3 class="footer-title">EST+6</h3>
-                    <p class="footer-tagline">New York + Barcelona</p>
+                    <span class="footer-title">EST+6</span>
+                    <span>New York + Barcelona</span>
                 </div>
                 <div>
-                    <p><a href="mailto:info@estplus6.com" style="color: #000; text-decoration: none;">info@estplus6.com</a></p>
-                </div>
-                <div>
-                    <p><a href="#" style="color: #000; text-decoration: none;">Instagram</a> / <a href="#" style="color: #000; text-decoration: none;">LinkedIn</a></p>
+                    <a href="mailto:info@estplus6.com">info@estplus6.com</a>
                 </div>
             </div>
-            <div class="copyright">
-                © 2025
-            </div>
-        </footer>
+        </div>
+    </footer>
     </div>
 
     <script>
