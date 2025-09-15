@@ -10,10 +10,10 @@
       Error loading projects: {{ error }}
     </div>
 
-    <div v-else-if="projects && projects.length > 0" class="projects-container">
+    <div v-else-if="sortedProjects && sortedProjects.length > 0" class="projects-container">
       <div class="projects-grid">
         <ProjectCard
-          v-for="project in projects"
+          v-for="project in sortedProjects"
           :key="project._id"
           :project="project"
         />
@@ -28,7 +28,7 @@
 
 <script setup>
 const { getProjects } = useSanity()
-const { data: projects, pending, error } = await useAsyncData('projects', getProjects)
+const { data: projects, pending, error } = useLazyAsyncData('projects', getProjects)
 
 // Sort projects by order field for authentic layout
 const sortedProjects = computed(() => {
