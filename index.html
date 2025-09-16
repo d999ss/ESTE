@@ -1,1 +1,662 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script type="importmap">{"imports":{"#entry":"/_nuxt/Ct51cotQ.js"}}</script><link rel="stylesheet" href="/_nuxt/entry.n1R6s4zP.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/_payload.json?5521d9eb-df9f-4de6-8924-e77ef0335f62"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/Ct51cotQ.js"><link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/5521d9eb-df9f-4de6-8924-e77ef0335f62.json"><link rel="prefetch" as="script" crossorigin href="/_nuxt/BcHDLb07.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/BU2b4sVD.js"><script type="module" src="/_nuxt/Ct51cotQ.js" crossorigin></script></head><body><div id="__nuxt"><div><div></div><!----><main class="main"><!----></main><!----></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/_payload.json?5521d9eb-df9f-4de6-8924-e77ef0335f62">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"prerenderedAt":8},["Reactive",2],{},["Set"],["ShallowReactive",5],{},true,"/",1757913282636]</script><script>window.__NUXT__={};window.__NUXT__.config={public:{sanityProjectId:"928u0duj",sanityDataset:"production",sanityApiVersion:"2023-05-03"},app:{baseURL:"/",buildId:"5521d9eb-df9f-4de6-8924-e77ef0335f62",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EST+6 — Work</title>
+    <meta name="description" content="EST+6 is a brand development & design practice delivering authentic world-class work, blending creativity, strategy, and bespoke processes.">
+    <style>
+        /* CSS Variables - EST+6 Design System */
+        :root {
+            --color-black: #000000;
+            --color-white: #ffffff;
+            --color-gray-200: #e5e5e5;
+            --color-gray-500: #6b6b6b;
+            --color-gray-600: #4a4a4a;
+            --color-gray-800: #1a1a1a;
+            --color-gray-900: #0d0d0d;
+
+            --font-monument: 'Monument Grotesk', 'Helvetica Neue', Arial, sans-serif;
+            --font-body: 'Helvetica Neue', Arial, sans-serif;
+
+            --text-2xs: 10px;
+            --text-xs: 11px;
+            --text-sm: 13px;
+            --text-base: 14px;
+            --text-lg: 16px;
+            --text-xl: 20px;
+            --text-2xl: 28px;
+            --text-3xl: 36px;
+
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --grid-columns: 6;
+            --grid-gap: 2px;
+        }
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            line-height: 1.4;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity var(--transition);
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-white);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-gray-200);
+            padding: var(--space-5) 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .logo {
+            font-family: var(--font-monument);
+            font-size: var(--text-base);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .location-indicators {
+            display: flex;
+            gap: var(--space-3);
+            font-size: var(--text-2xs);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .location-indicator {
+            opacity: 0.3;
+            transition: opacity var(--transition);
+            cursor: default;
+        }
+
+        .location-indicator.active {
+            opacity: 1;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-8);
+            font-size: var(--text-sm);
+            font-weight: 400;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link.active {
+            opacity: 0.6;
+        }
+
+        /* Main Content */
+        .main {
+            margin-top: calc(60px + var(--space-5));
+            padding: var(--space-10) 0;
+            min-height: 100vh;
+        }
+
+        /* Page Title */
+        .page-title {
+            font-family: var(--font-monument);
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-12);
+            text-align: center;
+        }
+
+        /* Projects Grid - EST+6 Signature Layout */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(var(--grid-columns), 1fr);
+            gap: var(--grid-gap);
+            grid-auto-rows: minmax(200px, auto);
+            grid-auto-flow: row dense;
+        }
+
+        /* Project Card */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            background: var(--color-black);
+            transition: transform var(--transition);
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(0.98);
+        }
+
+        /* Size variations */
+        .project-card.size-small {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .project-card.size-medium {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .project-card.size-large {
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+
+        /* Format variations */
+        .project-card.format-square {
+            aspect-ratio: 1;
+        }
+
+        .project-card.format-horizontal {
+            aspect-ratio: 16/9;
+        }
+
+        .project-card.format-vertical {
+            aspect-ratio: 3/4;
+        }
+
+        .project-link {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition);
+        }
+
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--color-gray-800);
+            color: var(--color-white);
+        }
+
+        .placeholder-text {
+            font-family: var(--font-monument);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            opacity: 0.5;
+        }
+
+        /* Project Overlay */
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.8) 0%,
+                rgba(0, 0, 0, 0.4) 40%,
+                rgba(0, 0, 0, 0) 70%
+            );
+            opacity: 0;
+            transition: opacity var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-6);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-info {
+            width: 100%;
+        }
+
+        .project-title {
+            font-family: var(--font-monument);
+            font-size: var(--text-lg);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--color-white);
+            margin-bottom: var(--space-1);
+            line-height: 1.2;
+        }
+
+        .project-client {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--color-white);
+            opacity: 0.9;
+            margin-bottom: var(--space-1);
+        }
+
+        .project-year {
+            font-size: var(--text-xs);
+            color: var(--color-white);
+            opacity: 0.7;
+            margin-bottom: var(--space-3);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--color-gray-200);
+            padding: var(--space-10) 0;
+            margin-top: var(--space-20);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: var(--text-sm);
+            color: var(--color-gray-600);
+        }
+
+        .footer-right {
+            font-size: var(--text-sm);
+        }
+
+        .footer-right a {
+            color: var(--color-gray-600);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-button {
+            display: none;
+            flex-direction: column;
+            gap: 3px;
+            padding: var(--space-2);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .menu-line {
+            width: 18px;
+            height: 1px;
+            background: var(--color-black);
+            transition: all var(--transition);
+            transform-origin: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .projects-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .project-card.size-large {
+                grid-column: span 2;
+            }
+
+            .page-title {
+                font-size: var(--text-2xl);
+                margin-bottom: var(--space-10);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --grid-columns: 2;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: flex;
+            }
+
+            .location-indicators {
+                display: none;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--grid-gap);
+            }
+
+            .project-card.size-small,
+            .project-card.size-medium,
+            .project-card.size-large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .project-overlay {
+                opacity: 1;
+                padding: var(--space-4);
+            }
+
+            .project-card:hover {
+                transform: none;
+            }
+
+            .project-card:hover .project-image {
+                transform: none;
+            }
+
+            .page-title {
+                font-size: var(--text-2xl);
+                margin-bottom: var(--space-8);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: var(--space-4);
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title {
+                font-size: var(--text-xl);
+                margin-bottom: var(--space-6);
+            }
+
+            .header {
+                padding: var(--space-4) 0;
+            }
+
+            .logo {
+                font-size: var(--text-sm);
+            }
+
+            .project-overlay {
+                padding: var(--space-3);
+            }
+
+            .project-title {
+                font-size: var(--text-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-left">
+                    <a href="/" class="logo">EST+6</a>
+                    <div class="location-indicators">
+                        <span class="location-indicator">NYC</span>
+                        <span class="location-indicator active">EST</span>
+                        <span class="location-indicator">BCN</span>
+                    </div>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link active">Work</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <button class="mobile-menu-button" aria-label="Toggle menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <h1 class="page-title">Work</h1>
+
+            <div class="projects-grid">
+                <!-- VSCO Brand Platform Relaunch -->
+                <article class="project-card size-large format-horizontal">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">VSCO</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">Brand Platform Relaunch</h2>
+                                    <p class="project-client">VSCO</p>
+                                    <p class="project-year">2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- VSCO Motion Design -->
+                <article class="project-card size-medium format-square">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">VSCO</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">Motion Design</h2>
+                                    <p class="project-client">VSCO</p>
+                                    <p class="project-year">2024</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- Open iOS Brand Experience -->
+                <article class="project-card size-medium format-vertical">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">Open</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">iOS Brand Experience</h2>
+                                    <p class="project-client">Open</p>
+                                    <p class="project-year">2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- AYOND Perfume Packaging -->
+                <article class="project-card size-small format-square">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">AYOND</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">Perfume Packaging Design</h2>
+                                    <p class="project-client">AYOND</p>
+                                    <p class="project-year">2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- AYOND Rebrand -->
+                <article class="project-card size-medium format-horizontal">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">AYOND</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">Rebrand & Packaging Design</h2>
+                                    <p class="project-client">AYOND</p>
+                                    <p class="project-year">2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <!-- ESCAC Brand Storytelling -->
+                <article class="project-card size-large format-horizontal">
+                    <a href="#" class="project-link">
+                        <div class="project-image-container">
+                            <div class="project-image-placeholder">
+                                <span class="placeholder-text">ESCAC</span>
+                            </div>
+                            <div class="project-overlay">
+                                <div class="project-info">
+                                    <h2 class="project-title">Brand Storytelling Master's Identity</h2>
+                                    <p class="project-client">ESCAC</p>
+                                    <p class="project-year">2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    © 2024 EST+6. All rights reserved.
+                </div>
+                <div class="footer-right">
+                    <a href="mailto:info@estplus6.com">info@estplus6.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Update location indicator based on time
+        function updateLocation() {
+            const hour = new Date().getHours();
+            const indicators = document.querySelectorAll('.location-indicator');
+
+            indicators.forEach(ind => ind.classList.remove('active'));
+
+            if (hour >= 9 && hour < 17) {
+                indicators[0].classList.add('active'); // NYC
+            } else if (hour >= 15 && hour < 23) {
+                indicators[2].classList.add('active'); // BCN
+            } else {
+                indicators[1].classList.add('active'); // EST
+            }
+        }
+
+        updateLocation();
+        setInterval(updateLocation, 60000);
+
+        // Mobile menu toggle
+        const menuButton = document.querySelector('.mobile-menu-button');
+        const menuLines = document.querySelectorAll('.menu-line');
+        let menuOpen = false;
+
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                menuLines.forEach(line => {
+                    line.style.transform = menuOpen
+                        ? (line === menuLines[0] ? 'rotate(45deg) translate(2px, 2px)' : 'rotate(-45deg) translate(2px, -2px)')
+                        : 'none';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
